@@ -1,7 +1,7 @@
 <div align="center">
   <h1 id="title">Blast</h1>
 
-  <em>A next generation digital audio sequencer.</em>
+  <em>A next-generation digital audio sequencer.</em>
 
   <img src="https://img.shields.io/badge/node-16.17.0-brightgreen?style=flat-square&logo=nodedotjs">
   <img src="https://img.shields.io/badge/JavaScript-ES2015-yellow?style=flat-square&logo=javascript">
