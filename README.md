@@ -123,7 +123,7 @@ git checkout <branch-name>
 git push origin main
 ```
 
-7. Launch your web browser and navigate to the project, in our repository.
+7. Launch your web browser and navigate to the project, in your repository.
 8. Create a pull request, on GitHub (make sure to describe the changes briefly in the pull request).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
