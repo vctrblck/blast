@@ -99,7 +99,13 @@ Contributing towards this project occurs in many ways. Continue below for a few 
 Any change to the codebase is implemented through this workflow...
 
 1. Ensure that you are on the `develop` branch.
-2. Create a new branch.
+2. Pull the latest changes in the develop branch.
+
+```
+git pull develop
+```
+
+3. Create a new branch.
 
 ```
 git branch <branch-name>
@@ -107,23 +113,28 @@ git branch <branch-name>
 
 For the branch name, use a name that identifies with the fix.
 
-2. Switch to the new branch
+4. Switch to the new branch
 
 ```
 git checkout <branch-name>
 ```
 
-2. Work on changes.
-3. Commit changes.
-4. Switch to `develop` branch.
-5. Merge the new branch with the `develop` branch.
-6. Push changes to GitHub.
+5. Work on changes.
+6. Commit changes.
+7. Switch to `develop` branch.
+8. Merge the new branch with the `develop` branch.
 
 ```
-git push origin main
+git merge <branch-name>
 ```
 
-7. Launch your web browser and navigate to the project, in your repository.
-8. Create a pull request, on GitHub (make sure to describe the changes briefly in the pull request).
+9. Push changes to GitHub.
+
+```
+git push origin develop
+```
+
+10. Launch your web browser and navigate to the project, in your repository.
+11. Create a pull request, on GitHub (make sure to describe the changes briefly in the pull request).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
