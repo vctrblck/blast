@@ -102,7 +102,7 @@ Any change to the codebase is implemented through this workflow...
 2. Pull the latest changes in the develop branch.
 
 ```
-git pull develop
+git pull origin develop
 ```
 
 3. Create a new branch.
