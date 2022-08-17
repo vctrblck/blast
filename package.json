@@ -1,0 +1,23 @@
+{
+  "name": "blast",
+  "version": "0.0.0",
+  "description": "A glorified digital audio sequencer.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vctrblck/blast.git"
+  },
+  "keywords": [
+    "website",
+    "audio-player"
+  ],
+  "author": "Undeclared Identifier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vctrblck/blast/issues"
+  },
+  "homepage": "https://github.com/vctrblck/blast#readme"
+}
