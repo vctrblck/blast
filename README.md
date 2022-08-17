@@ -27,7 +27,7 @@
 - Creating a playlist,
 - and more...
 
-<p align="right">(<a href="title">back to top</a>)</p>
+<p align="right">(<a href="readme-top">back to top</a>)</p>
 
 # Getting Started
 
@@ -84,7 +84,7 @@ This should:
 1. Launch the front-end of the project to your default browser.
 2. Initiate a local server on port `8080`, that connects to an active mongodb service/instance.
 
-<p align="right">(<a href="#title">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Development
 
