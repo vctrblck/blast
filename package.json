@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/vctrblck/blast/issues"
   },
-  "homepage": "https://github.com/vctrblck/blast#readme"
+  "homepage": "https://github.com/vctrblck/blast#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
