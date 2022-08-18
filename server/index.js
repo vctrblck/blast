@@ -1,19 +1,19 @@
 // index.js
 
-// Libraries:
-
-import express from "express";
+// Modules:
 
 import config from "./../config.js";
+import app from "./express.js";
 
 // Code:
 
-const app = express();
-
-app.get("/", function(request, response) {
-  response.send("API active...")
-})
-
-app.listen(config.PORT);
+// Initialize server
+app.listen(config.PORT, function(error) {
+  if (error) {
+    console.log("Error in initiating server!")
+  } else {
+    console.log(`Server active on port ${config.PORT}...`)
+  }
+});
 
 // index.js ends here

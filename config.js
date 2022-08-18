@@ -1,7 +1,15 @@
 // config.js
 
+// Modules:
+
+import dotenv from "dotenv";
+
+// Code:
+
+dotenv.config();
+
 const config = {
-  PORT: process.env.PORT || 8080
+  PORT: process.env.PORT
 }
 
 export default config;
