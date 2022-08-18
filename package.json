@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cd client && npm run build && cd .. && node ./server/index.js",
     "develop": "cd client && npm run build && cd .. && nodemon ./server/index.js",
-    "postinstall": "npm install --prefix ./..client"
+    "postinstall": "npm install --prefix ./client"
   },
   "repository": {
     "type": "git",
