@@ -1,7 +1,7 @@
 // index.js
 
 // Modules:
-
+/*
 import config from "./../config.js";
 import app from "./express.js";
 
@@ -14,6 +14,15 @@ app.listen(config.PORT, function(error) {
   } else {
     console.log(`Server active on port ${config.PORT}...`)
   }
-});
+});*/
+const express = require('express');
+const connection =  require("./db");
+const app = express();
+require("dotenv").config();
+
+connection()
+
+const port = process.env.PORT || 3000;
+app.listen(port, console.log(`Listening on port ${port}...`))
 
 // index.js ends here
