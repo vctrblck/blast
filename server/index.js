@@ -1,26 +1,19 @@
-// index.js
-
-// Modules:
-/*
-import config from "./../config.js";
-import app from "./express.js";
-
-// Code:
-
-// Initialize server
-app.listen(config.PORT, function(error) {
-  if (error) {
-    console.log("Error in initiating server!")
-  } else {
-    console.log(`Server active on port ${config.PORT}...`)
-  }
-});*/
-const express = require('express');
+const express = require("express");
 const connection =  require("./db");
 const app = express();
+const cors = require("cors");
+//const { use } = require('express/lib/router');
+const userRoutes = require("./routes/users");
+
 require("dotenv").config();
+//this allows us to no longer use try catch help
+//it takes care of asyncy errors
+require("express-async-errors");
 
 connection()
+app.use(cors());
+app.use(express.json());
+app.use("/api/users",userRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`))
