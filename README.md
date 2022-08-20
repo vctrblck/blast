@@ -5,6 +5,7 @@
 
   <img src="https://img.shields.io/badge/node-16.17.0-brightgreen?style=flat-square&logo=nodedotjs">
   <img src="https://img.shields.io/badge/JavaScript-ES2015-yellow?style=flat-square&logo=javascript">
+  <img src="https://img.shields.io/github/v/release/vctrblck/blast?label=Release&style=flat-square">
 </div>
 
 ## Table of Contents
@@ -111,7 +112,7 @@ git pull origin develop
 git branch <branch-name>
 ```
 
-For the branch name, use a name that identifies with the fix.
+For the branch name, use a name that identifies with the fix/feature.
 
 4. Switch to the new branch
 
