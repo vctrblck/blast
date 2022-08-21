@@ -28,7 +28,7 @@ const validate = (user)=>{
         name:Joi.string().min(5).max(10).required(),
         email:Joi.string().required(),
         password:passwordComplexity().required(),
-
+        isAdmin:Joi.boolean().required()
     });
     return schema.validate(user);
 }
