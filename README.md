@@ -6,6 +6,9 @@
   <img src="https://img.shields.io/badge/node-16.17.0-brightgreen?style=flat-square&logo=nodedotjs">
   <img src="https://img.shields.io/badge/JavaScript-ES2015-yellow?style=flat-square&logo=javascript">
   <img src="https://img.shields.io/github/v/release/vctrblck/blast?label=Release&style=flat-square">
+  <a href="https://codecov.io/gh/vctrblck/blast" > 
+    <img src="https://img.shields.io/codecov/c/github/vctrblck/blast?label=Coverage&logo=codecov&style=flat-square"/> 
+  </a>
 </div>
 
 ## Table of Contents
