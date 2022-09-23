@@ -10,12 +10,15 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import SpotifyWebApi from "spotify-web-api-node";
 import { useRecoilState } from "recoil";
+import axios from "axios";
 
 import NavBar from "../components/NavBar";
 import SearchBar from "../components/SearchBar";
 import SearchList from "../components/SearchList";
 import Player from "./../components/Player";
 import { currentTrackState } from "../atoms/playerAtom";
+import Track from "../components/Track";
+import NewReleases from "../components/NewReleases";
 
 // Code:
 
@@ -36,10 +39,13 @@ function SearchPage()
 
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const[getNewReleases,setNewReleases]= useState([]);
   const [displayPlayer, setDisplayPlayer] = useState(false);
+  const [lyrics, setLyrics] = useState(""); 
 
   // Component Hooks
 
+  //search
   useEffect(function() {
     if (!session) router.push("/auth/login");
 
@@ -50,6 +56,7 @@ function SearchPage()
     api.searchTracks(search).then(function(results) {
       setSearchResults(
         results.body.tracks.items.map(function(track) {
+          //get the smallest image
           const smallest = track.album.images.reduce(function(smallest, image) {
             if (image.height < smallest.height) return image;
             return smallest;
@@ -67,9 +74,52 @@ function SearchPage()
     })
   }, [search, session]);
 
+  //new Releases
+  useEffect(()=> {
+    //if (!session) router.push("/auth/login");
+
+    if (!session) return;
+    api.setAccessToken(session.accessToken);
+
+    api.getNewReleases().then((res)=> {
+      setNewReleases(
+        res.body.albums.items.map((track)=> {
+
+          return {
+            id: track.id,
+            artist: track.artists[0].name,
+            title: track.name,
+            uri: track.uri,
+            albumUrl:track.images[0].url,
+          };
+        })
+      );
+    });
+  }, [session]);
+  console.log(getNewReleases);
+
   useEffect(function() {
     setDisplayPlayer(true);
   }, []);
+
+  //get lyrics everytime song track changes
+  /*
+  useEffect(()=>{
+
+    if(!currentTrack) return
+    
+    axios.get('http://localhost:3000/lyrics', {
+
+      params:{
+    
+        track: currentTrack.title,
+        artist: currentTrack.artist
+      }
+    }).then(res => {
+      setLyrics(res.data.lyrics)   
+    })
+
+  },[currentTrack])*/
 
   // Component Render
 
@@ -82,7 +132,19 @@ function SearchPage()
       
       <main className="h-11/12 w-11/12 flex flex-col items-center space-y-12">
         <SearchBar search={search} setSearch={setSearch} />
-        <SearchList searchResults={searchResults} />
+
+          <h2 className="text-white font-bold nb-3">
+            {searchResults.length ===0 ? "New Releases" : "Searched Tracks"}
+          </h2>
+        {searchResults.length === 0 ?
+        <NewReleases getNewReleases={getNewReleases}/> :
+        <SearchList searchResults={searchResults}/>
+        }
+        {searchResults ===0 && (
+          <div className="text-center" style={{ whiteSpace: "pre"}}>
+            {lyrics}
+          </div>
+        )}
       </main>
 
       <div className="fixed bottom-0 left-0 right-0 z-50">

@@ -10,4 +10,8 @@
   .sidebarIcon {
     @apply h-6 text-2xl text-neutral-400 cursor-pointer hover:text-white;
   }
+
+  .icon {
+    @apply hover:scale-125 transition-all duration-150 ease-out;
+  }
 }

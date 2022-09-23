@@ -4,6 +4,24 @@
 
 import NextAuth from "next-auth/next";
 import SpotifyProvider from "next-auth/providers/spotify";
+/*
+const express = require('express');
+//const cors = require("cors")
+
+const lyricsFinder = require("lyrics-finder")
+const bodyParser = require("body-parser")
+
+const app = express();
+//app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.get('/lyrics',async(req,res) => {
+  const lyrics = 
+   (await lyricsFinder(req.query.artist, req.query.track)) || "No lyrics where found"
+  res.json({lyrics})
+})*/
+
 
 // Code:
 
@@ -94,5 +112,7 @@ export default NextAuth({
     },
   }
 })
+
+//app.listen(3001);
 
 // [...nextauth].js ends here
