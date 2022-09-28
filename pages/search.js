@@ -19,6 +19,8 @@ import Player from "./../components/Player";
 import { currentTrackState } from "../atoms/playerAtom";
 import Track from "../components/Track";
 import NewReleases from "../components/NewReleases";
+import Dropdown from "../components/Dropdown";
+import Right from "../components/Right";
 
 // Code:
 
@@ -41,7 +43,8 @@ function SearchPage()
   const [searchResults, setSearchResults] = useState([]);
   const[getNewReleases,setNewReleases]= useState([]);
   const [displayPlayer, setDisplayPlayer] = useState(false);
-  const [lyrics, setLyrics] = useState(""); 
+  const [lyrics, setLyrics] = useState("");
+  const [recentlyPlayed, setRecentlyPlayed] = useState([]); 
 
   // Component Hooks
 
@@ -96,7 +99,27 @@ function SearchPage()
       );
     });
   }, [session]);
-  console.log(getNewReleases);
+  //console.log(getNewReleases);
+
+  //Recently Played
+  /*useEffect(() => {
+    if (!session) return;
+    api.setAccessToken(session.accessToken);
+    api.getMyRecentlyPlayedTracks({ limit: 20 }).then((res) => {
+      setRecentlyPlayed(
+        res.body.items.map(({ track }) => {
+          return {
+            id: track.id,
+            artist: track.artists[0].name,
+            title: track.name,
+            uri: track.uri,
+            albumUrl: track.album.images[0].url,
+          };
+        })
+      );
+    });
+  }, [session]);
+  console.log(recentlyPlayed);*/
 
   useEffect(function() {
     setDisplayPlayer(true);
@@ -129,10 +152,10 @@ function SearchPage()
         <title>Search - Blast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+      <Right api={api}/>
       <main className="h-11/12 w-11/12 flex flex-col items-center space-y-12">
+        
         <SearchBar search={search} setSearch={setSearch} />
-
           <h2 className="text-white font-bold nb-3">
             {searchResults.length ===0 ? "New Releases" : "Searched Tracks"}
           </h2>

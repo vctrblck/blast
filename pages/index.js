@@ -16,6 +16,13 @@ function Home()
   const router = useRouter();
   const { data: session } = useSession();
 
+  /*const { status, data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push("/auth/login");
+    },
+  });*/
+
   useEffect(function() {
     if (session) {
       router.push("/search")
