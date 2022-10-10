@@ -28,8 +28,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run build:test-app:testing",
-    "build:test-app:testing": "ng build test-app --deploy-url  https://test-app.com/ --configuration=test-config",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
