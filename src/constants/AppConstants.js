@@ -1,6 +1,6 @@
 import Spotify from "spotify-web-api-js";
 
-export const CLIENT_ID = "55abdee2a4204208b74173fe559d9283";
+export const CLIENT_ID = "8dccc479cf704b088723cd2c6c8fb145";
 export const REDIRECT_URL = "http://localhost:3000/callback/";
 export const SCOPE = [
   "playlist-read-private",
