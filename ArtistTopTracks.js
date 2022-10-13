@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+//this will show the tracks that you play often
 import Tracks from "components/Common/Tracks";
 import BlockHeader from "components/Common/BlockHeader";
 import SkeletonTracks from "components/Skeleton/SkeletonTracks";
@@ -18,7 +18,7 @@ export class ArtistTopTracks extends Component {
       loadTopTracks(id);
     }
   }
-
+// we are using the spotify api to render the songs
   render() {
     const {items, pending} = this.props.tracks;
     const source = {name: `ArtistTopTracks_${this.props.id}`};
