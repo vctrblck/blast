@@ -18,7 +18,7 @@ function SearchBar({ search, setSearch })
       <input 
         type="text"
         value={search}
-        placeholder="Find some tunes..."
+        placeholder="Search some tunes..."
         onChange={(e) => setSearch(e.target.value)}
         className="bg-cyan-900 border-none text-neutral-400 lg:w-full focus:ring-0 outline-none placeholder:text-neutral-400 ml-4" />
     </div>
