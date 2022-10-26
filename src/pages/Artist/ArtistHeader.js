@@ -30,14 +30,14 @@ export class ArtistHeader extends Component {
         style={{backgroundImage: `url(${image})`}}
       >
         <div className="artist-header__info">
-          <p className="artist-header__followers">{followers}</p>
+          {/*<p className="artist-header__followers">{followers}</p>*/}
           <h1 className="artist-header__name">{name}</h1>
-          <button
+          {/*<button
             className="artist-header__btn btn"
             onClick={isFollower ? this.unfollow : this.follow}
           >
             {isFollower ? "Unfollow" : "Follow"}
-          </button>
+          </button>*/}
         </div>
       </header>
     );

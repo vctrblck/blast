@@ -69,7 +69,8 @@ class Main extends Component {
               return <Playlist id={props.match.params.id} {...props} />;
             }}
           />
-          {/*<Route
+          //i changed this
+          <Route
             path={`${RouteConstant.ARTIST}/:id`}
             render={props => {
               return (
@@ -79,7 +80,7 @@ class Main extends Component {
                 />
               );
             }}
-          />*/}
+          />
           <Route
             path={`${RouteConstant.CATEGORY_PLAYLISTS}/:id`}
             component={CategoryPlaylists}

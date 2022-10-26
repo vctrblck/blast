@@ -30,9 +30,9 @@ export default class Artist extends Component {
           <section className="section-separators">
             <ArtistHeader id={id} />
             <ArtistTopTracks id={id} />
-            <ArtistAlbums id={id} />
+            {/*<ArtistAlbums id={id} />
             <ArtistSingles id={id} />
-            <RelatedArtists id={id} />
+    <RelatedArtists id={id} />*/}
           </section>
         </Route>
         <Route

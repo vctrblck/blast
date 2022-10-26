@@ -32,7 +32,7 @@ export class ArtistTopTracks extends Component {
     }
     return (
       <section>
-        <BlockHeader title='Top Tracks' />
+        <BlockHeader title='Songs By Artist' />
         <section className="tracks tracks_col-2">
           <Tracks
             columns={2}

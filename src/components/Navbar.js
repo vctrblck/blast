@@ -44,9 +44,9 @@ export default class Navbar extends Component {
   render() {
     const navbarItems = [
       { path: RouteConstant.HOME, icon: <Home />, name: "Home" },
+      { path: RouteConstant.GENRES, icon: <LightBulb />, name: "Genres" },
       { path: RouteConstant.CHARTS, icon: <Lightning />, name: "Charts" },
       { path: RouteConstant.NEW, icon: <Label />, name: "New" },
-      { path: RouteConstant.GENRES, icon: <LightBulb />, name: "Genres" },
       { path: RouteConstant.PLAYLISTS, icon: <Layers />, name: "Playlists" },
       { path: RouteConstant.LIKED, icon: <Heart />, name: "Songs" },
       { path: RouteConstant.ARTISTS, icon: <User />, name: "Artists" },
@@ -71,7 +71,7 @@ export default class Navbar extends Component {
               <SearchBtn className="navbar__search"/>
             </div>
             <ul className="navbar__group">
-              {navbarItems.slice(0, 1).map(({path, icon, name}, index) => { {/*it was like this to show all the features : navbarItems.slice(0, 4).map(({path, icon, name}, index) => */}
+              {navbarItems.slice(0, 2).map(({path, icon, name}, index) => { {/*it was like this to show all the features : navbarItems.slice(0, 4).map(({path, icon, name}, index) => */}
                 return (
                   <li
                     key={index}
