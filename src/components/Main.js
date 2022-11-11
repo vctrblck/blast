@@ -6,6 +6,7 @@ import * as RouteConstant from "constants/RouteConstants";
 import Album from "pages/Album";
 import Artist from "pages/Artist/Artist";
 import Categories from "pages/Categories";
+import CategoryPlaylists from "pages/CategoryPlaylists";
 import UserPlaylists from "pages/UserPlaylists";
 import Playlist from "pages/Playlist";
 import SavedTracks from "pages/SavedTracks";
@@ -36,6 +37,8 @@ class Main extends Component {
     return (
       <React.Fragment>
         <Switch location={isModal ? this.previousLocation : location}>
+
+          {/* Render the home component*/ }
           <Route
             exact
             path={RouteConstant.HOME}
@@ -55,6 +58,8 @@ class Main extends Component {
               return <Album id={props.match.params.id} {...props} />;
             }}
           />
+
+          {/* Render the Playlist component*/ }
           <Route
             path={`${RouteConstant.PLAYLIST}/:id`}
             render={props => {
@@ -73,10 +78,19 @@ class Main extends Component {
               );
             }}
           />
+          {/* Dispaly all the songs that are in a specific song genere*/ }
+          <Route
+            path={`${RouteConstant.CATEGORY_PLAYLISTS}/:id`}
+            component={CategoryPlaylists}
+          />
+
+          {/* Get all the different generes we have*/ }
           <Route
             path={RouteConstant.GENRES}
             component={Categories}
           />
+
+          {/* if we get an error display the error*/}
           <Route path="*">
             <Page404 />
           </Route>

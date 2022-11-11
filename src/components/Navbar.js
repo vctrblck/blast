@@ -65,7 +65,8 @@ export default class Navbar extends Component {
               <SearchBtn className="navbar__search"/>
             </div>
             <ul className="navbar__group">
-              {navbarItems.slice(0, 2).map(({path, icon, name}, index) => { {/*it was like this to show all the features : navbarItems.slice(0, 4).map(({path, icon, name}, index) => */}
+              {/* mapp out home and genres*/}
+              {navbarItems.slice(0, 2).map(({path, icon, name}, index) => {
                 return (
                   <li
                     key={index}
@@ -87,7 +88,9 @@ export default class Navbar extends Component {
               })}
             </ul>
             <ul className="navbar__group">
-              {navbarItems.slice(2, 4).map(({path, icon, name}, index) => { {/* it was like this to show all the library : navbarItems.slice(4, 7).map(({path, icon, name}, index) => */}
+
+              {/* 2md group we map out the playlist and favourite songs*/}
+              {navbarItems.slice(2, 4).map(({path, icon, name}, index) => {
                 return (
                   <li
                     key={index + 4}
