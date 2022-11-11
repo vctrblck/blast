@@ -6,9 +6,7 @@ import * as RouteConstant from "constants/RouteConstants";
 import Album from "pages/Album";
 import NewReleases from "pages/NewReleases";
 import Artist from "pages/Artist/Artist";
-import FollowedArtists from "pages/FollowedArtists";
 import Categories from "pages/Categories";
-import Charts from "pages/Charts/Charts";
 import CategoryPlaylists from "pages/CategoryPlaylists";
 import UserPlaylists from "pages/UserPlaylists";
 import Playlist from "pages/Playlist";
@@ -49,14 +47,10 @@ class Main extends Component {
             path={RouteConstant.PLAYLISTS}
             component={UserPlaylists}
           />
-          {/*<Route
-            path={RouteConstant.ARTISTS}
-            component={FollowedArtists}
-          />
           <Route
             path={RouteConstant.LIKED}
             component={SavedTracks}
-          />*/}
+          />
           <Route
             path={`${RouteConstant.ALBUM}/:id`}
             render={props => {
@@ -92,10 +86,6 @@ class Main extends Component {
           <Route
             path={RouteConstant.GENRES}
             component={Categories}
-          />
-          <Route
-            path={RouteConstant.CHARTS}
-            component={Charts}
           />
           <Route path="*">
             <Page404 />

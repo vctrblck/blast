@@ -5,11 +5,8 @@ import { Menu, X } from "react-feather";
 import * as RouteConstant from "constants/RouteConstants";
 import { ReactComponent as Home } from "images/Navbar/Home.svg";
 import { ReactComponent as Layers } from "images/Navbar/Layers.svg";
-import { ReactComponent as User } from "images/Navbar/User.svg";
 import { ReactComponent as Heart } from "images/Navbar/Heart.svg";
-import { ReactComponent as Label } from "images/Navbar/Label.svg";
 import { ReactComponent as LightBulb } from "images/Navbar/LightBulb.svg";
-import { ReactComponent as Lightning } from "images/Navbar/Lightning.svg";
 import logo from "images/Blast.png";
 import SearchBtn from "components/Search/SearchBtn";
 import "styles/Navbar.scss";
@@ -45,11 +42,8 @@ export default class Navbar extends Component {
     const navbarItems = [
       { path: RouteConstant.HOME, icon: <Home />, name: "Home" },
       { path: RouteConstant.GENRES, icon: <LightBulb />, name: "Genres" },
-      { path: RouteConstant.CHARTS, icon: <Lightning />, name: "Charts" },
-      { path: RouteConstant.NEW, icon: <Label />, name: "New" },
       { path: RouteConstant.PLAYLISTS, icon: <Layers />, name: "Playlists" },
-      { path: RouteConstant.LIKED, icon: <Heart />, name: "Songs" },
-      { path: RouteConstant.ARTISTS, icon: <User />, name: "Artists" },
+      { path: RouteConstant.LIKED, icon: <Heart />, name: "Favourites Songs" },
     ];
     const {isHidden, isMenuOpen} = this.state;
     return (
@@ -93,8 +87,7 @@ export default class Navbar extends Component {
               })}
             </ul>
             <ul className="navbar__group">
-              {/*<p className="navbar__group-header">YOUR LIBRARY</p>*/}
-              {navbarItems.slice(4, 5).map(({path, icon, name}, index) => { {/* it was like this to show all the library : navbarItems.slice(4, 7).map(({path, icon, name}, index) => */}
+              {navbarItems.slice(2, 4).map(({path, icon, name}, index) => { {/* it was like this to show all the library : navbarItems.slice(4, 7).map(({path, icon, name}, index) => */}
                 return (
                   <li
                     key={index + 4}

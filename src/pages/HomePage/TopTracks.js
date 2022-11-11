@@ -33,8 +33,8 @@ export class TopTracks extends Component {
     return (
       <section className="top-songs">
         <BlockHeader
-          title="Global Top 50"
-          description="Hot Track"
+          title="New Releases"
+          description=""
         />
         <div
           className="top-songs__container custom-scrollbar"

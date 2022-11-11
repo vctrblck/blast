@@ -198,11 +198,11 @@
     position: relative;
     svg {
       vertical-align: middle;
-      fill: $bg-primary;
-      stroke: $text-primary;
+      fill: rgb(255, 255, 255);
+      stroke: rgb(255, 255, 255);
       &.like-btn_active {
-        stroke: $text-primary;
-        fill: $text-primary;
+        stroke: rgb(255, 6, 6);
+        fill: rgb(255, 6, 6);
       }
     }
   }
