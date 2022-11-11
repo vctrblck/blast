@@ -4,10 +4,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import * as RouteConstant from "constants/RouteConstants";
 import Album from "pages/Album";
-import NewReleases from "pages/NewReleases";
 import Artist from "pages/Artist/Artist";
 import Categories from "pages/Categories";
-import CategoryPlaylists from "pages/CategoryPlaylists";
 import UserPlaylists from "pages/UserPlaylists";
 import Playlist from "pages/Playlist";
 import SavedTracks from "pages/SavedTracks";
@@ -74,14 +72,6 @@ class Main extends Component {
                 />
               );
             }}
-          />
-          <Route
-            path={`${RouteConstant.CATEGORY_PLAYLISTS}/:id`}
-            component={CategoryPlaylists}
-          />
-          <Route
-            path={RouteConstant.NEW}
-            component={NewReleases}
           />
           <Route
             path={RouteConstant.GENRES}

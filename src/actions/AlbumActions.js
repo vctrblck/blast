@@ -18,6 +18,7 @@ import transformResponse from "utils/transformResponse";
 import spotifyQuery from "utils/spotifyApi";
 import alert from "components/Common/Alert/Alert";
 
+//load the album onto the playlist
 export function loadAlbum(albumId) {
   return async dispatch => {
     const pending = makeActionCreator(ALBUM.PENDING);
@@ -43,6 +44,7 @@ export function loadAlbum(albumId) {
   };
 }
 
+// get albums from the spotify api
 async function getAlbum(albumId) {
   const album = await spotifyQuery("getAlbum", [albumId]);
   const isAlbumSaved = await spotifyQuery(
@@ -64,6 +66,7 @@ async function getAlbum(albumId) {
   };
 }
 
+// get albums from the spotify api
 async function getAlbumTracks(album) {
   const response = await spotifyQuery(
     "getAlbumTracks",
